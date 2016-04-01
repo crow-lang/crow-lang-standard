@@ -1,6 +1,6 @@
 [t1] 基础语法
 
-Crow是个流式的文档，它由一系列Section组成。在Crwo中一个文档标题是一个Section, 一段文字
+Crow是个流式的文档，它由一系列Section组成。在Crwo中,一个文档标题是一个Section, 一段文字
 是一个Section,一张图片也是一个Section，甚至一个链接也是一个Section......。一系列
 Section就组成了一个Crow文档。Section是整个Crow文档的基石，掌握了Section便可以明白Crow
 文档的工作方式。
@@ -31,15 +31,67 @@ Section了。
 [exp: crow]
 [t1]
 content=基础语法
+[end]
 
 或者一个超链接：
+
 [exp: crow]
 [link]
 content=www.roading.org
 
-但是这样写起来有点太麻烦了。实际大部分情况我们用一种简便的写法就可以了——单行模式。
+但是这样写起来有点太麻烦了。实际大部分情况我们可以有更简便的写法，介绍完整的Section定义
+是为了更好的理解crow的模型，并使我们能够举一反三。实际上大部分Section我们并不需要这么
+繁琐的写法。
 
 [t3] 单行模式
+
+前文说到，对于任何一类Section来说，都有两个特殊的属性，内容(content)和名字（name）。
+这两个属性是crow中的头等公民，他们在语法上有自己的特殊之处。我们先说内容属性，内容属性的
+属性名其实是可以被省略的，换言之一个属性如果没有给定属性名，那么它就会被当作一个内容属性，
+并且类目（:([exp: crow][class]):）之后跟随不换行的内容会被当作属性。规则听上去饶舌，看
+个例子就明白了。以一个超链接为例：
+
+[exp: crow]
+[link]
+content=www.roading.org
+
+相当于：
+
+[exp: crow]
+[link]
+www.roading.org
+
+也相当于
+
+[exp: crow]
+[link] www.roading.org
+
+第三种写法才是我们大部分Section常用的写法。再来说说名字（name）属性。还以上面的链接例子
+为例，对于一个链接，有时候我们想要它显示的文字并不是链接地址，这时候我们就用到名字属性了，
+那我们应该这样写：
+
+[exp: crow]
+[link] www.roading.org
+name=点我点我
+
+名字属性和内容属性也一样，可以有其简写方式，可以将它紧跟在类目名之后，上面的链接可以这样写：
+
+[exp: crow]
+[link: 点我点我] www.roading.org
+
+实际上关于Section有一种很方便很著名的单行模式写法，其表达式是这样的：
+
+[exp: crow]
+[class: name] content
+
+单行表达式分别指定了类目，名字和内容，其中名字是可选的。
+
+[t3] name和content的简略写法
+
+[t3] 特殊的Section[text]
+[t3] Section的划分
+[t3] 特殊的Section[end]
+
 [t3] 嵌入
 [t3] 引用
 [t3] 自定义Section
