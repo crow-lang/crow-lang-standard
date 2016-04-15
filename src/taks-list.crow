@@ -1,0 +1,18 @@
+[t1] Standard Syntax Tasks
+
+[task]
+[ ] syntax primer
+[ ] access crow struct data expression
+[ ] basic section define
+	[ ] title
+	[ ] text
+	[ ] picture
+	[ ] .....
+[ ] advance section define
+	[ ] code
+	[ ] formula
+	[ ] table
+	[ ] animation
+[ ] environment section
+	[ ] dictionary
+	[ ] ....
